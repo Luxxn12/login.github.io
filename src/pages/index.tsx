@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import { Button, Container, Group, Paper, Text } from '@mantine/core'
+import { Avatar, Box, Button, Container, Group, Paper, Text } from '@mantine/core'
 import { sUser } from '@/g_state/g_state'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -16,6 +16,7 @@ export default function Home() {
     <>
     <Group p={40}>
       <Text>Hallo Selamat Datang </Text>
+      <Avatar radius="xl" />
       <Text fw={700}>{sUser.value?.name}</Text>
     </Group>
       <Container size={430} my={40}>
