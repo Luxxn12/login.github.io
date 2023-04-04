@@ -15,4 +15,26 @@ model User {
   name String
   email String @unique
   password String
+  masterrolls MasterRoll[]
+}
+
+model NamaBarang {
+  id Int @id @default(autoincrement())
+  namaBarang String
+  jenisBarang String
+  hargaBarang String
+}
+
+model Admin {
+  id Int @id @default(autoincrement())
+  name String
+  email String @unique
+  password String
+}
+
+model MasterRoll {
+  id Int @id @default(autoincrement())
+  name String
+  author    User    @relation(fields: [authorId], references: [id])
+  authorId Int
 }

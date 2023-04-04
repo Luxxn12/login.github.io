@@ -14,7 +14,8 @@ import { useDisclosure } from "@mantine/hooks";
 import React from "react";
 import Register from "./register";
 import { useForm } from "@mantine/form";
-import toast from "react-simple-toasts";
+// import toast from "react-simple-toasts";
+import toast from 'react-hot-toast'
 import { sUser } from "@/g_state/g_state";
 
 const Login = () => {
@@ -29,7 +30,7 @@ const Login = () => {
 
   const onLogin = () => {
     if (Object.values(formData.values.data).includes(""))
-      return toast("Data tidak boleh kosong");
+      return  toast.error("Data tidak boleh kosong");
     fetch("api/auth/login", {
       method: "POST",
       headers: {
@@ -42,7 +43,7 @@ const Login = () => {
         localStorage.setItem("user", JSON.stringify(data));
         sUser.value = data;
       } else {
-        toast("Email dan Password salah");
+        toast.error("Email dan Password salah");
       }
     });
   };

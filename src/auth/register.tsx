@@ -2,7 +2,8 @@ import { Button, Container, Paper, PasswordInput, Text, TextInput, Title } from 
 import { useForm } from '@mantine/form';
 import { useRouter } from 'next/router';
 import React from 'react';
-import toast from 'react-simple-toasts';
+// import toast from 'react-simple-toasts';
+import toast from 'react-hot-toast'
 
 const Register = () => {
   const router = useRouter()
@@ -18,7 +19,7 @@ const Register = () => {
 
   const onRegister = () => {
     if (Object.values(formRegister.values.data).includes("")) {
-      return toast("Lengkapi Data Diri")
+      return toast.error("Lengkapi Data Diri")
     }
 
     fetch('api/auth/register', {
@@ -29,16 +30,17 @@ const Register = () => {
       body: JSON.stringify(formRegister.values.data)
     }).then(v => {
       if (v.status === 201) {
-        toast("Success")
+        toast.success('Successfully toasted!')
         router.reload()
       } else {
-        toast("Email Telah digunakan")
+        toast.error("Email Telah digunakan")
       }
     })
   }
   return (
     <>
     <Container size={430} my={40} >
+      
       <Text fz={25} fw={700} ta={'center'}>Welcome to Register</Text>
       <Paper withBorder shadow='md' p={30} mt={30} radius={"md"}>
         <TextInput {...formRegister.getInputProps("data.name")} label="Username" placeholder='username' required/>
