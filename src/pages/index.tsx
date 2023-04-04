@@ -22,8 +22,8 @@ export default function Home() {
       <Container size={430} my={40}>
         <Paper  withBorder shadow='md' p={30} mt={30} radius={"md"}>
           <Text fw={700} ta={'center'} fz={20}>Data Diri</Text>
-        <Text mt={'md'}>Name :{sUser.value?.name}</Text>
-        <Text mt={'md'}>Email :{sUser.value?.email}</Text>
+        <Text mt={'md'}>Name : {sUser.value?.name}</Text>
+        <Text mt={'md'}>Email : {sUser.value?.email}</Text>
         <Button mt={25} fullWidth onClick={onLogOut}>LogOut</Button>
         </Paper>
       </Container>
