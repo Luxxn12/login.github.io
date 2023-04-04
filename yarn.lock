@@ -488,6 +488,19 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.7.tgz#ccab5c8f7dc557a52ca3288c10075c9ccd37fff7"
   integrity sha512-Cr4OjIkipTtcXKjAsm8agyleBuDHvxzeBoa1v543lbv1YaIwQjESsVcmjiWiPEbC1FIeHOG/Op9kdCmAmiS3Kw==
 
+"@preact/signals-core@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@preact/signals-core/-/signals-core-1.2.3.tgz#36bf8b31027a5b9ade9e50cf9fba80614e8a2354"
+  integrity sha512-Kui4p7PMcEQevBgsTO0JBo3gyQ88Q3qzEvsVCuSp11t0JcN4DmGCTJcGRVSCq7Bn7lGxJBO+57jNSzDoDJ+QmA==
+
+"@preact/signals-react@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@preact/signals-react/-/signals-react-1.2.2.tgz#16046c533e7e7592419d6dd21f9017cca3963f6b"
+  integrity sha512-GoESQ9n1bns2FD+8yqH7lBvQMavboKLCNEW+s0hs3Wcp5B1VHvVxwJo6aFs6rpxoh1/q8Tvwbi4vIeehBD2mzA==
+  dependencies:
+    "@preact/signals-core" "^1.2.3"
+    use-sync-external-store "^1.2.0"
+
 "@prisma/client@4.12.0":
   version "4.12.0"
   resolved "https://registry.yarnpkg.com/@prisma/client/-/client-4.12.0.tgz#119b692888b1fe0fd3305c7d0e0ac48520aa6839"
@@ -793,6 +806,11 @@
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
+
+"@types/lodash@^4.14.192":
+  version "4.14.192"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.192.tgz#5790406361a2852d332d41635d927f1600811285"
+  integrity sha512-km+Vyn3BYm5ytMO13k9KTp27O75rbQ0NFw+U//g+PX7VZyjCioXaRFisqSIJRECljcTv73G3i6BpglNGHgUQ5A==
 
 "@types/node@^18.15.11":
   version "18.15.11"
@@ -2326,6 +2344,11 @@ lodash.merge@^4.6.2:
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
+lodash@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
+
 loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
@@ -2685,6 +2708,11 @@ react-remove-scroll@^2.5.5:
     tslib "^2.1.0"
     use-callback-ref "^1.3.0"
     use-sidecar "^1.1.2"
+
+react-simple-toasts@^3.3.3:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/react-simple-toasts/-/react-simple-toasts-3.3.3.tgz#334f18bb37e0b886f96bdb22500aea11e994f352"
+  integrity sha512-7sMyo1PyhHT0dj2uptRiuQCV3S9Gxb6+y3WVtEcnKS9IDOLKLgbCtF+2HDAS+Ekm6EyD21vPiuI5JVZGMB8q9g==
 
 react-style-singleton@^2.2.1:
   version "2.2.1"
@@ -3179,6 +3207,11 @@ use-sidecar@^1.1.2:
   dependencies:
     detect-node-es "^1.1.0"
     tslib "^2.0.0"
+
+use-sync-external-store@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
+  integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
 
 util-deprecate@~1.0.1:
   version "1.0.2"

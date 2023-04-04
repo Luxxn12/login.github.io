@@ -1,6 +1,11 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { MantineProvider } from '@mantine/core';
+import { PropsWithChildren } from 'react';
+import { useShallowEffect } from "@mantine/hooks"
+import { sUser } from '@/g_state/g_state';
+import _ from "lodash"
+import Login from '@/auth/login';
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
@@ -20,8 +25,26 @@ export default function App(props: AppProps) {
           colorScheme: 'light',
         }}
       >
+        <AuthProvider>
         <Component {...pageProps} />
+        </AuthProvider>
       </MantineProvider>
     </>
   );
+}
+
+const AuthProvider = ({children}: PropsWithChildren) => {
+  useShallowEffect(() => {
+    const user = localStorage.getItem('user')
+    if (!user) {
+      sUser.value = {}
+    } else {
+      sUser.value = JSON.parse(user)
+    }
+  }, [])
+  if (sUser.value == null) return <></>
+  if (_.isEmpty(sUser.value)) return <><Login/></>
+  return<>
+  {children}
+  </>
 }
