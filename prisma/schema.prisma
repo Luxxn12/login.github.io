@@ -11,30 +11,23 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
-  name String
-  email String @unique
-  password String
-  masterrolls MasterRoll[]
+  id           Int         @id @default(autoincrement())
+  name         String
+  email        String      @unique
+  password     String
+  MasterRole   MasterRole? @relation(fields: [masterRoleId], references: [id])
+  masterRoleId Int         @default(1)
 }
 
 model NamaBarang {
-  id Int @id @default(autoincrement())
-  namaBarang String
+  id          Int    @id @default(autoincrement())
+  namaBarang  String
   jenisBarang String
   hargaBarang String
 }
 
-model Admin {
-  id Int @id @default(autoincrement())
+model MasterRole {
+  id   Int    @id @default(autoincrement())
   name String
-  email String @unique
-  password String
-}
-
-model MasterRoll {
-  id Int @id @default(autoincrement())
-  name String
-  author    User    @relation(fields: [authorId], references: [id])
-  authorId Int
+  User User[]
 }

@@ -1,4 +1,6 @@
+import { sUser } from '@/g_state/g_state';
 import { createStyles, SimpleGrid, Card, Image, Text, Container, AspectRatio, Box } from '@mantine/core';
+import { useShallowEffect } from '@mantine/hooks';
 
 const mockdata = [
     {
@@ -92,10 +94,13 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const PesanBarang = () => {
+
     const { classes } = useStyles();
 
-    const cards = mockdata.map((article) => (
-        <Card key={article.title} p="md" radius="md" component="a" href="#" className={classes.card}>
+
+
+    const cards = mockdata.map((article, i) => (
+        <Card key={i} p="md" radius="md" component="a" href="#" className={classes.card}>
             <AspectRatio ratio={1920 / 1080}>
                 <Image src={article.image} />
             </AspectRatio>
@@ -108,8 +113,11 @@ const PesanBarang = () => {
         </Card>
     ));
 
+    if (sUser?.value?.masterRoleId == 2) return <><Text>Anda Tidak Memiliki Akses</Text></>
+
     return (
         <Box>
+            {JSON.stringify(sUser.value)}
             <SimpleGrid cols={4} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
                 {cards}
             </SimpleGrid>

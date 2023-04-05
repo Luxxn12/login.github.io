@@ -32,6 +32,7 @@
     "@tiptap/starter-kit": "^2.0.2",
     "@types/lodash": "^4.14.192",
     "@types/node": "^18.15.11",
+    "@types/prompts": "^2.4.4",
     "@types/react": "18.0.32",
     "@types/react-dom": "18.0.11",
     "dayjs": "^1.11.7",
@@ -41,6 +42,7 @@
     "lodash": "^4.17.21",
     "next": "13.2.4",
     "prisma": "^4.12.0",
+    "prompts": "^2.4.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.0",
@@ -50,5 +52,8 @@
   },
   "main": "index.js",
   "repository": "https://github.com/Luxxn12/login.git",
-  "license": "MIT"
+  "license": "MIT",
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  }
 }

@@ -6,14 +6,18 @@ import { Avatar, Box, Button, Container, Flex, Group, Menu, Paper, Text } from '
 import { sUser } from '@/g_state/g_state'
 import { IconLogout } from "@tabler/icons-react"
 import Pesanbarang from '@/Pesan/PesanBarang'
+import { useShallowEffect } from '@mantine/hooks'
 
 const inter = Inter({ subsets: ['latin'] })
+
 
 export default function Home() {
   const onLogOut = () => {
     localStorage.removeItem('user')
     sUser.value = {}
   }
+
+  
   return (
     <>
       <Flex

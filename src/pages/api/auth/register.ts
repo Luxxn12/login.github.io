@@ -12,6 +12,7 @@ const register = async ( req: NextApiRequest, res:NextApiResponse) => {
             }
         })
 
+        console.log(cekEmail)
         if (cekEmail) return res.status(403).end()
 
         await prisma.user.create({
