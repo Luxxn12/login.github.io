@@ -117,7 +117,7 @@ const PesanBarang = () => {
 
     return (
         <Box>
-            {JSON.stringify(sUser.value)}
+            {/* {JSON.stringify(sUser.value)} */}
             <SimpleGrid cols={4} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
                 {cards}
             </SimpleGrid>
